@@ -70,8 +70,7 @@
 </template>
 
 <script setup lang="ts">
-    import type { Country, CountryDetail } from '@/types/country'
-    import type { Data } from '@/types/apiData'
+    import type { Data, Country, CountryDetail } from '@/types/types'
     import { getCountryName } from '@/helpers/useCountry'
     import { ref, computed } from 'vue'
     import Pagination from '@/components/core/Pagination.vue'

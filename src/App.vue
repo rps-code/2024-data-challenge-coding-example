@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-    import type { Data } from '@/types/apiData'
+    import type { Data } from '@/types/types'
     import { ref, onMounted } from 'vue'
     import CountryTable from '@/components/CountryTable.vue'
     import ProductTable from '@/components/ProductTable.vue'
