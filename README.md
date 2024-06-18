@@ -1,10 +1,13 @@
 # Fancensus Coding Example
 
+Thank you for the opportunity to do this, it was a fun project to do!
+
 ## Frontend Stack
 
 -   Vue 3 (Composition API)
 -   Tailwind
 -   Vite
+-   Typescript
 
 ## Project Setup
 
