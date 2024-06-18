@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
+    import type { Data } from '@/types/apiData'
     import { ref, computed } from 'vue'
-    import { Data } from '@/types/apiData'
 
     const props = defineProps<{
         data: Data[]

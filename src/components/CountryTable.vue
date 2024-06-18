@@ -70,8 +70,8 @@
 </template>
 
 <script setup lang="ts">
-    import { Country, CountryDetail } from '@/types/country'
-    import { Data } from '@/types/apiData'
+    import type { Country, CountryDetail } from '@/types/country'
+    import type { Data } from '@/types/apiData'
     import { getCountryName } from '@/helpers/useCountry'
     import { ref, computed } from 'vue'
     import Pagination from '@/components/core/Pagination.vue'
@@ -89,7 +89,7 @@
     const allCountries = computed<Country[]>(() => {
         const counts: { [key: string]: number } = {}
 
-        props.data.forEach((item: Country) => {
+        props.data.forEach((item: Data) => {
             counts[item.countrycode] = (counts[item.countrycode] || 0) + 1
         })
 
@@ -111,7 +111,7 @@
 
     const countryClicked = (country: Country) => {
         selectedCountry.value = country
-        countryDetails.value = props.data.filter((item: CountryDetail) => item.countrycode === country.code)
+        countryDetails.value = props.data.filter((item: Data) => item.countrycode === country.code)
     }
 
     const clearSelection = () => {

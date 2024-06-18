@@ -17,7 +17,7 @@
             </div>
             <p class="text-gray-300 text-xl mt-8 text-center">Fetching data...</p>
         </div>
-        <div v-else="data">
+        <div v-else>
             <!-- Load components and pass the data... if given more time would explore the options of splitting the data up and passing minimal data to the components -->
             <CountryTable :data="data" />
             <ProductTable :data="data" />
@@ -27,21 +27,21 @@
 </template>
 
 <script setup lang="ts">
+    import type { Data } from '@/types/apiData'
     import { ref, onMounted } from 'vue'
-    import { Data } from '@/types/apiData'
     import CountryTable from '@/components/CountryTable.vue'
     import ProductTable from '@/components/ProductTable.vue'
     import Charts from '@/components/Charts.vue'
     import axios from 'axios'
 
-    const data = ref<Data | null>(null)
+    const data = ref<Data[]>([])
     const loading = ref(true)
     const error = ref<string | null>(null)
 
     // Async call on app mount for the data
     onMounted(async () => {
         try {
-            const response = await axios.get<Data>('https://www.fancensus.com/test/dataset1.json')
+            const response = await axios.get<Data[]>('https://www.fancensus.com/test/dataset1.json')
             data.value = response.data
         } catch (err) {
             error.value = `Failed to fetch data from the API: ${err}`
