@@ -1,6 +1,6 @@
-# Fancensus Coding Example
+# 2024 Data Challenge Coding Example
 
-Thank you for the opportunity to do this, it was a fun project to do!
+A small project visualising some of Fancensus's data using Vue 3 and Tailwind.
 
 ## Frontend Stack
 
